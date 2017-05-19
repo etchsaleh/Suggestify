@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #00a7d6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="suggestify.SecondaryViewController">
+   <children>
+      <StackPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="backBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#backBtnPressed" opacity="0.0" prefHeight="52.0" prefWidth="220.0" style="-fx-background-color: #1ed761; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #15af4d;" text="BACK TO SEARCH">
+               <font>
+                  <Font name="Proxima Nova Bold" size="22.0" />
+               </font>
+            </Button>
+            <VBox fx:id="searchVbox" prefHeight="115.0" prefWidth="640.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="640.0" spacing="5.0">
+                     <children>
+                        <VBox fx:id="suggestifyLogo" alignment="CENTER" prefHeight="35.0" prefWidth="84.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="POWERED BY">
+                                 <font>
+                                    <Font size="7.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="89.0" text="SUGGESTIFY®" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <TextField fx:id="searchBar" onKeyTyped="#hideErrorLbl" prefHeight="43.0" prefWidth="315.0" promptText="Search artist..." style="-fx-background-color: #0177ad; -fx-border-color: #00e5ff; -fx-border-radius: 50; -fx-background-radius: 50;">
+                           <font>
+                              <Font name="Open Sans" size="15.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@textFieldStyle.css" />
+                              <URL value="@../styles/textFieldStyle.css" />
+                           </stylesheets>
+                        </TextField>
+                        <Button fx:id="addBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#addBtnPressed" prefHeight="43.0" prefWidth="43.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #00e5ff; -fx-border-radius: 50;" text="+" textAlignment="CENTER" textFill="#00e5ff">
+                           <font>
+                              <Font name="Gameplay Regular" size="15.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@buttonStyle.css" />
+                              <URL value="@../styles/buttonStyle.css" />
+                           </stylesheets>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="errorLbl" alignment="CENTER" opacity="0.0" prefHeight="10.0" prefWidth="418.0" text="*at least one entry is required*" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Open Sans Bold Italic" size="9.0" />
+                     </font>
+                     <padding>
+                        <Insets left="270.0" />
+                     </padding>
+                  </Label>
+                  <FlowPane fx:id="flowPane" hgap="10.0" prefHeight="30.0" prefWidth="640.0" vgap="10.0">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <StackPane layoutY="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <VBox fx:id="artistList" alignment="TOP_CENTER" opacity="0.0" prefHeight="380.0" prefWidth="640.0">
+               <children>
+                  <Label fx:id="headlineLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="280.0" text="ARTISTS YOU MAY LIKE..." textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="artistHboxVbox" alignment="CENTER" prefHeight="270.0" prefWidth="640.0" spacing="10.0">
+                     <children>
+                        <HBox fx:id="artistHbox1" alignment="CENTER" onMouseEntered="#artistHboxHover" onMouseExited="#artistHboxHoverExit" spacing="10.0">
+                           <children>
+                              <Label fx:id="artistLbl1" text="Sting">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#xBtnHover" onMouseExited="#xBtnHoverExit" onMousePressed="#removeArtist" opacity="0.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #000000; -fx-border-radius: 20;" text="X" fx:id="xBtn1">
+                                 <font>
+                                    <Font name="Futura LT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="80.0" right="80.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="artistHbox2" alignment="CENTER" onMouseEntered="#artistHboxHover" onMouseExited="#artistHboxHoverExit" spacing="10.0">
+                           <children>
+                              <Label fx:id="artistLbl2" text="Coldplay">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#xBtnHover" onMouseExited="#xBtnHoverExit" onMousePressed="#removeArtist" opacity="0.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #000000; -fx-border-radius: 20;" text="X" fx:id="xBtn2">
+                                 <font>
+                                    <Font name="Futura LT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="80.0" right="80.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="artistHbox3" alignment="CENTER" onMouseEntered="#artistHboxHover" onMouseExited="#artistHboxHoverExit" spacing="10.0">
+                           <children>
+                              <Label fx:id="artistLbl3" text="Craig David">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#xBtnHover" onMouseExited="#xBtnHoverExit" onMousePressed="#removeArtist" opacity="0.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #000000; -fx-border-radius: 20;" text="X" fx:id="xBtn3">
+                                 <font>
+                                    <Font name="Futura LT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="artistHbox4" alignment="CENTER" onMouseEntered="#artistHboxHover" onMouseExited="#artistHboxHoverExit" spacing="10.0">
+                           <children>
+                              <Label fx:id="artistLbl4" text="Micheal Bolton">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#xBtnHover" onMouseExited="#xBtnHoverExit" onMousePressed="#removeArtist" opacity="0.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #000000; -fx-border-radius: 20;" text="X" fx:id="xBtn4">
+                                 <font>
+                                    <Font name="Futura LT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="80.0" right="80.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="artistHbox5" alignment="CENTER" onMouseEntered="#artistHboxHover" onMouseExited="#artistHboxHoverExit" spacing="10.0">
+                           <children>
+                              <Label fx:id="artistLbl5" text="James Blunt">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#xBtnHover" onMouseExited="#xBtnHoverExit" onMousePressed="#removeArtist" opacity="0.0" style="-fx-background-color: TRANSPARENT; -fx-border-color: #000000; -fx-border-radius: 20;" text="X" fx:id="xBtn5">
+                                 <font>
+                                    <Font name="Futura LT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="80.0" right="80.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox fx:id="hboxLogo" alignment="CENTER" prefHeight="100.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="spotifyLogo" fitHeight="59.0" fitWidth="53.0" onMouseEntered="#logoHover" onMouseExited="#logoHoverExit" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/spotifyIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="playlistBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#logoHover" onMouseExited="#logoHoverExit" onMousePressed="#createPlaylistPressed" prefHeight="37.0" prefWidth="148.0" style="-fx-background-color: TRANSPARENT;" text="CREATE PLAYLIST" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Proxima Nova Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="okBtnVbox" alignment="CENTER" prefWidth="640.0" spacing="10.0">
+               <StackPane.margin>
+                  <Insets bottom="40.0" />
+               </StackPane.margin>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="2.0" prefHeight="70.0" prefWidth="591.0" text="To get started, search for your favorite artists above. After you're done, just press the button below and we'll take it from there." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Open Sans Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="okBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#okPressed" prefHeight="95.0" prefWidth="281.0" style="-fx-background-color: #1ed761; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 1; -fx-border-color: #15af4d;" text="SUGGEST ARTISTS" textAlignment="CENTER">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="26.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

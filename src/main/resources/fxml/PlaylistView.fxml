@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #00a7d6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="suggestify.PlaylistViewController">
+   <children>
+      <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="playlistCreatedVbox" alignment="CENTER" opacity="0.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Button fx:id="newPlaylistBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#newPlaylist" style="-fx-background-color: #1ed761; -fx-border-color: #15af4d; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 1;" text="NEW PLAYLIST" textAlignment="CENTER">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="PLAYLIST CREATED">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label text="To view your playlist, click here:">
+                     <font>
+                        <Font name="Open Sans Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="viewPlaylistBtn" alignment="CENTER" mnemonicParsing="false" onMouseEntered="#viewPlaylistHover" onMouseExited="#viewPlaylistHoverExit" onMousePressed="#viewPlaylistOnSpotify" style="-fx-background-color: TRANSPARENT; -fx-border-color: #333333; -fx-border-radius: 40; -fx-border-width: 2;" text="Etch's playlist" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/spotifyIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Proxima Nova Bold" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="playlistDetailsVbox" alignment="TOP_CENTER" prefHeight="480.0" prefWidth="640.0">
+               <children>
+                  <ImageView fx:id="spotifyLogo" fitHeight="56.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/spotifyIcon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="playlistLbl" alignment="CENTER" contentDisplay="CENTER" prefWidth="255.0" text="CREATE PLAYLIST" textAlignment="CENTER">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="40.0" />
+                     </padding>
+                  </Label>
+                  <VBox fx:id="titleVbox" prefHeight="85.0" prefWidth="640.0">
+                     <children>
+                        <Label text="TITLE">
+                           <font>
+                              <Font name="Proxima Nova Bold" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="115.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="titleTextField" prefHeight="43.0" prefWidth="440.0" promptText="Enter playlist title" style="-fx-background-color: #333333; -fx-background-radius: 40; -fx-border-color: #FFFFFF; -fx-border-radius: 35;" stylesheets="@../styles/textEntryStyle.css">
+                           <VBox.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Open Sans" size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="numOfTracksVbox" alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="TRACKS PER ARTIST" textAlignment="CENTER">
+                           <font>
+                              <Font name="Proxima Nova Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="640.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="numDecBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#numDecPressed" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #1ed761; -fx-border-color: #15af4d; -fx-border-width: 1; -fx-background-radius: 50; -fx-border-radius: 50;" text="−">
+                                 <font>
+                                    <Font name="SF Compact Display Heavy" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="trackNumLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #333333; -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-color: #FFFFFF;" text="3" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Proxima Nova Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="numIncBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#numIncPressed" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #1ed761; -fx-border-color: #15af4d; -fx-border-width: 1; -fx-background-radius: 50; -fx-border-radius: 50;" text="+">
+                                 <font>
+                                    <Font name="SF Compact Display Heavy" size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Button fx:id="doneBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#btnHover" onMouseExited="#btnHoverExit" onMousePressed="#donePressed" prefHeight="75.0" prefWidth="265.0" style="-fx-background-color: #1ed761; -fx-border-color: #15af4d; -fx-border-width: 1; -fx-background-radius: 50; -fx-border-radius: 50;" text="DONE!" textAlignment="CENTER">
+                     <font>
+                        <Font name="Proxima Nova Bold" size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

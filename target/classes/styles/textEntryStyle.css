@@ -1,0 +1,6 @@
+.text-input {
+    -fx-text-fill: #FFFFFF;
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: #1ed761;
+}
+

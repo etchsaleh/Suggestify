@@ -1,0 +1,7 @@
+.button:hover{
+    -fx-text-fill: #FFFFFF;
+    -fx-highlight-fill: #FFFFFF;
+}
+.button:focused{
+    -fx-text-fill: #00e5ff;
+}
