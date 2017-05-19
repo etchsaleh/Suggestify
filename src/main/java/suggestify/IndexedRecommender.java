@@ -96,59 +96,55 @@ public class IndexedRecommender {
             if(alref[i] == true)
                 continue;
             String s = arts.get(i);
-            if(s.contains("www."))
+            if(s.contains("www.") || s.contains(".com"))
                 continue;
-            if(s.contains("ft"))
+            if(s.contains(" ft") || s.contains("vs"))
                 continue;
-            if(s.contains("vs"))
+            if(s.contains("greatest hits") || s.contains(" live "))
                 continue;
-            if(s.contains("greatest hits"))
+            if(s.contains(" feat") || s.contains("f."))
                 continue;
-            if(s.contains(".com"))
+            if(s.contains("[") || s.contains("]"))
                 continue;
-            if(s.contains("f."))
+            if(s.contains("(") || s.contains(")"))
                 continue;
-            if(s.contains("feat"))
+            if(s.contains("{") || s.contains("}"))
                 continue;
-            if(s.contains("["))
+            if(s.contains("-") || s.contains("_"))
                 continue;
-            if(s.contains("("))
+            if(s.contains("!") || s.contains("#"))
                 continue;
-            if(s.contains("-"))
+            if(s.contains("%") || s.contains("^"))
                 continue;
-            if(s.contains(" live"))
+            if(s.contains("=") || s.contains(":"))
                 continue;
-            if(s.contains("live "))
+            if(s.contains("anda") || s.contains("@"))
                 continue;
-            if(s.contains("anda"))
+            if(s.contains("*") || s.contains("\""))
                 continue;
-            if(s.contains("*"))
+            if(s.contains("\"") || s.contains(" and "))
                 continue;
-            if(s.contains("\""))
+            if(s.contains(";") || s.contains("&"))
                 continue;
-            if(s.contains(";"))
+            if(s.contains("\\") || s.contains("/"))
                 continue;
-            if(s.contains("&"))
+            if(s.contains(",") || s.contains("$"))
                 continue;
-            if(s.contains("\\"))
+            if(s.contains(">") || s.contains("<"))
                 continue;
-            if(s.contains("/"))
+            if(s.contains(" aka ") || s.contains(" with "))
                 continue;
-            if(s.contains(" and "))
+            if(s.contains("tribute") || s.contains(" band "))
                 continue;
-            if(s.contains(","))
+            if(s.contains("a ") || s.contains("a."))
                 continue;
-            if(s.contains("@"))
+            if(s.contains("?") || s.contains("|"))
                 continue;
-            if(s.contains("$"))
+            if(s.contains("0") || s.contains("1") || s.contains("2"))
                 continue;
-            if(s.contains(" aka "))
+            if(s.contains("4") || s.contains("5") || s.contains("6"))
                 continue;
-            if(s.contains(" with "))
-                continue;
-            if(s.contains("tribute"))
-                continue;
-            if(s.contains(" band "))
+            if(s.contains("7") || s.contains("8") || s.contains("9"))
                 continue;
             if(!(s.charAt(0) >= 'a' && s.charAt(0) <= 'z'))
                 continue;
