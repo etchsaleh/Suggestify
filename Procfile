@@ -1,0 +1,1 @@
+worker: java $JAVA_OPTS -cp target/Suggestify-1.0.jar/dependency/* main.main
