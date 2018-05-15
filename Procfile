@@ -1,1 +1,1 @@
-worker: java $JAVA_OPTS -cp target/Suggestify-1.0.jar/dependency/* suggestify.MainApp
+worker: java $JAVA_OPTS -cp target/classes:target/dependency/* suggestify.MainApp
